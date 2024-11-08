@@ -10,9 +10,10 @@ typedef struct bd_array{
   int32_t cap;
 } bd_array;
 
-bd_array bd_array_init();
-int32_t bd_array_free(bd_array arr);
-int32_t bd_array_push(bd_array arr, int32_t n);
+bd_array bd_array_init(int32_t initial_capacity);
+int32_t bd_array_free(bd_array* arr);
+int32_t bd_array_push(bd_array* arr, int32_t n);
+void bd_array_print(bd_array* arr);
 // int bdpush(bd_array* arr, int32_t i);
 
 
