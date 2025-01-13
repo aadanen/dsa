@@ -16,6 +16,9 @@ int main(void) {
   }
 
   bd_array_print(&arr);
+  printf("Index of 16: %d\n", bd_array_bsearch(&arr, 16));
+  printf("Index of 17: %d\n", bd_array_bsearch(&arr, 17));
+
 
   bd_array_free(&arr);
   return 0;

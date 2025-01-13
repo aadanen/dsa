@@ -13,7 +13,9 @@ typedef struct bd_array{
 bd_array bd_array_init(int32_t initial_capacity);
 int32_t bd_array_free(bd_array* arr);
 int32_t bd_array_push(bd_array* arr, int32_t n);
+int32_t bd_array_write(bd_array* arr, int32_t index, int32_t n);
 void bd_array_print(bd_array* arr);
+int32_t bd_array_bsearch(bd_array* arr, int32_t target);
 // int bdpush(bd_array* arr, int32_t i);
 
 

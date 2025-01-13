@@ -1,5 +1,5 @@
 CC := gcc
-CFLAGS := -Wall -Wextra -Isrc/
+CFLAGS := -Wall -Wextra -Isrc/ -g
 BIN := bin
 
 BUILD_DIR := build
