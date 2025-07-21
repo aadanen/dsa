@@ -1,30 +1,31 @@
 #include <bd_array.h>
+#include <bd_btree.h>
+#include <bd_ll.h>
 #include <stdio.h>
 
+#define NUM_NODES 16
 int main(void) {
-  printf("bandit\n");
-/*
-  bd_array* arr = bd_array_init();
+  int arr[NUM_NODES] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+  bd_btree_node* root = bd_min_btree_from_sorted(arr, NUM_NODES);
 
-  printf("%i\n", arr->size);
-  printf("%i\n", arr->cap);
-*/
-  bd_array arr = bd_array_init(10);
-  bd_array_print(&arr);
-  /*
-  for (int i = 63; i > 0; i--) {
-    bd_array_push(&arr, (i + 1) * (i + 1));
-  }
-  */
-  int32_t err = bd_array_gen_random(&arr, 37, 0, 1);
-  printf("%d\n", err);
+  bd_ll* ll = bd_ll_new();
+  // 1
+  bd_ll_push_back(ll, root->left->left->left);
+  // 3
+  bd_ll_push_back(ll, root->left->left->right);
+  // 2
+  bd_ll_push_back(ll, root->left->left);
 
-  bd_array_print(&arr);
-  bd_array_msort(&arr, BD_ASCENDING);
-  bd_array_print(&arr);
+  bd_btree_node* c;
+  c = bd_ll_pop_front(ll);
+  printf("%d\n", c->val);
+  c = bd_ll_pop_front(ll);
+  printf("%d\n", c->val);
+  c = bd_ll_pop_front(ll);
+  printf("%d\n", c->val);
 
+  
 
-  bd_array_free(&arr);
   return 0;
 }
 

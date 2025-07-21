@@ -12,5 +12,8 @@ int bd_bst_insert(bd_btree_node* root, bd_btree_node* node);
 void bd_btree_preorder(bd_btree_node* root);
 void bd_btree_inorder(bd_btree_node* root);
 void bd_btree_postorder(bd_btree_node* root);
+void bd_btree_levelorder(bd_btree_node* root);
+
+bd_btree_node* bd_min_btree_from_sorted(int* arr, int size);
 
 #endif /*BD_BTREE_H*/
